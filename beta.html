@@ -31,30 +31,36 @@
     <link rel="manifest" href="content/metadata/manifest.webmanifest">
     <link rel="dns-prefetch" href="//s.w.org">
     <link rel="stylesheet" href="style-beta.css">
-    <script type="importmap">
-        {
-          "imports": {
-            "three": "https://unpkg.com/three@<version>/build/three.module.js",
-            "three/addons/": "https://unpkg.com/three@<version>/examples/jsm/"
-          }
-        }
-    </script>
     <script src="script.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-D8ELJ51Y13"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-D8ELJ51Y13');</script>
 </head>
 <body>
+    <header>
+        <img src="content/favicon/safari-pinned-tab.svg" alt=""">
+        <div></div>
+    </header>
     <main>
-        <div id="welcome-container">
-            <h1 id="welcome-text">HANDCRAFTED</h1>
-            <h1><u id="welcome-text-change" class="active">UNIQUE</u></h1>
-            <h1>EXPERIENCES</h1>
-            <div id="author">
-                <h4><i>BY</i></h4>
-                <h1>IVAN BOGDAS AEBERSOLD</h1>
+        <div class="main-text-container">
+            <h1>HANDCRAFTED</h1>
+        </div>
+        <div id="main-animated-text-container">
+            <div>
+                <div class="multiple"></div>
+                <div class="single"><span>UNIQUE</span></div>
             </div>
         </div>
+        <div class="main-text-container">
+            <h1>EXPERIENCES</h1>
+        </div>
     </main>
+    <footer>
+        <div id="footer-scroll"></div>
+        <div id="footer-by">
+            <a>BY</a>
+            <a>IVAN BOGDAS AEBERSOLD</a>
+        </div>
+    </footer>
 </body>
 </html>
