@@ -1,0 +1,7 @@
+#work {
+    height: calc(100vh - 68px - 100px);
+    paddingTop: 100px;
+    mixBlendMode: difference;
+    opacity: 0;
+    color: black;
+}

@@ -1,0 +1,20 @@
+header svg:nth-child(1) {
+    fill: var(--white);
+}
+
+#menu-header-icon {
+    transition: transform 1600ms;
+}
+
+#menu-header-icon:hover {
+    transform: rotate(360deg);
+}
+
+#menu-header-icon.active {
+    transform: rotate(495deg);
+}
+
+#menu-header-icon line {
+    stroke: var(--white);
+    stroke-width: 4;
+}

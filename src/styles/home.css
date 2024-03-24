@@ -1,0 +1,274 @@
+#home {
+    width: 100%;
+    height: calc(100vh - 68px - 100px);
+    overflow: hidden;
+    mix-blend-mode: difference;
+    transition: opacity 1.2s cubic-bezier(0.68, 0.02, 0.22, 0.81);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: sticky;
+    top: 68px;
+}
+
+#home.hide {
+    opacity: 0;
+}
+
+#home-animation-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main-text-container {
+    width: 45vw;
+    min-width: 320px;
+    height: fit-content;
+    text-align: right;
+    mix-blend-mode: difference;
+    display: block;
+}
+
+.main-text-container h1 {
+    margin: 0;
+    font-size: 2em;
+}
+.main-text-container:nth-child(1) h1 {
+    text-align: left;
+}
+
+#main-animated-text-container {
+    transition: height 0.25s linear;
+    min-height: 38px;
+    max-height: calc(100vh - 68px - 100px);
+}
+
+#main-animated-text-container > div {
+    height: 100%;
+    width: 45vw;
+    overflow: hidden;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 2em;
+    font-weight: bold;
+    background-color: var(--white);
+    mix-blend-mode: difference;
+    transition: width cubic-bezier(1, 0, 0, 1) 1.2s;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+#main-animated-text-container div > div > span {
+    margin: 0 1vw;
+}
+
+#main-animated-text-container > div > .multiple {
+    width: 0;
+    visibility: hidden;
+}
+
+#main-animated-text-container > div.animate {
+    animation: 
+        5s cubic-bezier(1, 0, 0, 1) 2s welcome-text-animation-open forwards,
+        1.2s cubic-bezier(1, 0, 0, 1) 8s welcome-text-animation-close forwards,
+        1.2s cubic-bezier(1, 0, 0, 1) 9.4s welcome-text-animation-reopen forwards;
+}
+
+#main-animated-text-container > div.animate > .multiple {
+    animation: 5.6s linear 4s welcome-text-animation-slide-multiple forwards;
+}
+
+#main-animated-text-container > div.animate > .single {
+    animation: 5.6s linear 4s welcome-text-animation-slide forwards;
+}
+
+@-webkit-keyframes welcome-text-animation-slide-multiple {
+    0% {
+        width: fit-content;
+        visibility: visible;
+        transform: translate(0px);
+    }
+    99% {
+        width: fit-content;
+        visibility: visible;
+        transform: translate(50vw);
+    }
+    100% {
+        width: 0px;
+        visibility: hidden;
+        transform: translate(0px);
+    }
+}
+
+@-webkit-keyframes welcome-text-animation-slide {
+    0% {transform: translate(0px);}
+    99% {transform: translate(50vw);}
+    100% {transform: translate(0px);}
+}
+
+@-webkit-keyframes welcome-text-animation-open {
+    0% {
+        width: 45vw;
+        color: var(--black);
+    }
+    50% {
+        width: 4px;
+        color: var(--white);
+    }
+    100% { 
+        width: 100vw;
+        color: var(--black);
+    }
+}
+
+
+@-webkit-keyframes welcome-text-animation-close {
+    0% { 
+        width: 100vw;
+        color: var(--black);
+    }
+    100% {
+        width: 0px;
+        color: var(--white);
+    },
+}
+
+@-webkit-keyframes welcome-text-animation-reopen {
+    0% { 
+        width: 0px;
+        color: var(--white);
+    }
+    100% {
+        width: 45vw;
+        color: var(--black);
+    },
+}
+
+#home-scroll-down {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+    margin-bottom: -22%;
+    opacity: 0;
+    animation: 8s cubic-bezier(0.74, 0.09, 0.26, 0.92) footer-scroll-glow 1s infinite;
+}
+
+@-webkit-keyframes footer-scroll-glow {
+    0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+#home-scroll {
+    border: 3px solid var(--white);
+    border-radius: 54px;
+    width: 24px;
+    height: 54px;
+    transform: rotate(180deg);
+}
+
+#home-scroll::after {
+    position: relative;
+    left: 3px;
+    content: '';
+    width: 18px;
+    height: 18px;
+    display: block;
+    border-radius: 100%;
+    background-color: var(--white);
+    margin-top: 3px;
+    animation: 8s cubic-bezier(0.74, 0.09, 0.26, 0.92) 6s footer-scroll-animation infinite;
+}
+
+@-webkit-keyframes footer-scroll-animation {
+    0% {
+        margin-top: 3px;
+    }
+    10% {
+        margin-top: 34px;
+    }
+    20% {
+        margin-top: 3px;
+    }
+    100% {
+        margin-top: 3px;
+    }
+}
+
+#welcome-container #author h1 {
+    text-align: left;
+}
+
+#welcome-container #author h4 {
+    text-align: left;
+}
+
+@media (max-width: 860px) {
+    #home .main-text-container {
+        width: 100vw;
+        min-width: 320px;
+    }
+
+    #home .main-text-container h1 {
+        text-align: center !important;
+        margin: 10px 0px;
+    }
+
+    #main-animated-text-container > div {
+        width: 100vw;
+    }
+
+    @-webkit-keyframes welcome-text-animation-open {
+        0% {
+            width: 100vw;
+            color: var(--black);
+        }
+        50% {
+            width: 4px;
+            color: var(--white);
+        }
+        100% { 
+            width: 100vw;
+            color: var(--black);
+        }
+    }
+    
+    
+    @-webkit-keyframes welcome-text-animation-close {
+        0% { 
+            width: 100vw;
+            color: var(--black);
+        }
+        100% {
+            width: 0px;
+            color: var(--white);
+        },
+    }
+    
+    @-webkit-keyframes welcome-text-animation-reopen {
+        0% { 
+            width: 0px;
+            color: var(--white);
+        }
+        100% {
+            width: 100vw;
+            color: var(--black);
+        },
+    }
+}

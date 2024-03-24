@@ -1,0 +1,101 @@
+nav {
+    position: absolute;
+    width: 100%;
+    max-width: 1920px;
+    height: 0;
+    background-color: var(--background);
+    z-index: 3;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 4%;
+    transition: height 1.2s cubic-bezier(0.68, 0.02, 0.22, 0.81);
+    pointer-events: none;
+}
+
+nav.active {
+    height: calc(100vh - 68px);
+    pointer-events: auto;
+}
+
+nav > div {
+    display: flex;
+    font-size: 64px;
+    mix-blend-mode: difference;
+    position: relative;
+    transition: width 0.25s cubic-bezier(0.68, 0.02, 0.22, 0.81), background 0.25s cubic-bezier(0.68, 0.02, 0.22, 0.81);
+}
+
+nav > div:hover {
+    background-color: var(--white);
+    cursor: pointer;
+    text-align: right;
+    width: 100% !important;
+    overflow: hidden;
+    transition:
+        width 1s cubic-bezier(0.68, 0.02, 0.22, 0.81),
+        0s background 0s cubic-bezier(0.68, 0.02, 0.22, 0.81);
+}
+
+nav > div > .single {
+    position: absolute;
+    right: 0;
+    mix-blend-mode: difference;
+    transition: 0.5s opacity 0.1s cubic-bezier(0.68, 0.02, 0.22, 0.81);
+}
+
+nav > div:hover > .single {
+    opacity: 0;
+    transition: 0.1s opacity 0.1s cubic-bezier(0.68, 0.02, 0.22, 0.81);
+}
+
+nav > div > .single > span {
+    padding: 0px 42px;
+}
+
+nav > div > .multiple {
+    color: var(--black);
+    opacity: 0;
+    font-weight: bold;
+    font-style: italic;
+    transition: opacity 0.1s cubic-bezier(0.68, 0.02, 0.22, 0.81);
+}
+
+nav > div:hover > .multiple {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.75s cubic-bezier(0.68, 0.02, 0.22, 0.81);
+}
+
+nav > div:hover > .multiple span {
+    padding: 0px 20px;
+}
+
+nav > div:hover > .multiple:nth-child(1) {
+    animation: 10s linear navbar-text-animation-slide-multiple 1s infinite;
+}
+
+nav > div:hover > .multiple:nth-child(2) {
+    position: absolute;
+    animation: 10s linear navbar-text-animation-slide-multiple-secondary 1s infinite;
+}
+
+@-webkit-keyframes navbar-text-animation-slide-multiple {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@-webkit-keyframes navbar-text-animation-slide-multiple-secondary {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}

@@ -1,0 +1,29 @@
+footer {
+    position: sticky;
+    width: calc(100% - 60px);
+    max-width: calc(1920px - 60px);
+    bottom: 0;
+    padding: 10px 30px;
+    padding-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    mix-blend-mode: difference;
+    transition: opacity 1.2s cubic-bezier(0.68, 0.02, 0.22, 0.81);
+}
+
+footer.hide {
+    opacity: 0;
+}
+
+#footer-by {
+    font-size: 21px;
+    font-weight: bold;
+    text-align: right;
+}
+
+#footer-by a:nth-child(1) {
+    display: block;
+    font-size: 0.7em;
+    font-style: italic;
+}
